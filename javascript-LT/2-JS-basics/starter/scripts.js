@@ -128,7 +128,7 @@ console.log(x);
 
 
 /******************************
-//*BMI Calculation
+//* BMI Calculation
 
 var johnMass, markMass, johnHeight, markHeight;
 johnHeight = 1.73; // kg
@@ -499,6 +499,8 @@ console.log(isDesigner);
 
 */
 
+// My Challenge 3 result
+/*
 var bills = new Array(48, 124, 268);
 var tips = [48, 124, 268];
 
@@ -522,6 +524,7 @@ var firstRes = calTips(48);
 var secondRes = calTips(124);
 var thridRes = calTips(268);
 
+
 //All tips array
 console.log(tips);
 
@@ -535,6 +538,7 @@ console.log(bills);
 
 //console.log('This is the total ' + bills)
 
+*/
 
 /*****************************
 * CODING CHALLENGE 3
@@ -579,27 +583,273 @@ console.log(tips, finalValues);
 */
 
 
+/****************************************
+* Objects (objects are arrays that have names assigned to them) and Properties
+
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family:['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+console.log(john);
+
+// How to retrieve data from object.
+console.log(john.firstName); // Dot Notation
+console.log(john['lastName']);
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+// Another way to initialize an Object
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1998;
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+*/
+
+
+/****************************************
+* Objects and Methods - Methods are functions that you can add to Object.
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1993,
+    family:['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function(){ // calcAge: function(birthYear){
+        return 2018 - this.birthYear; // Use this.birthYear
+    }
+};
+
+
+// console.log(john.calcAge(birthYear)); // if you are not using this.birthYear
+console.log(john.calcAge());
+
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1993,
+    family:['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function(){ // calcAge: function(birthYear){
+        this.age = 2018 - this.birthYear; // You can store the output of the john object itself.
+    }
+};
+
+
+// console.log(john.calcAge(birthYear)); // if you are not using this.birthYear
+john.calcAge();
+
+console.log(john);
+
+*/
+
+/*************************************************
+* Coding Challenge 4
+
+
+/******************************
+//*BMI Calculation
+
+var johnMass, markMass, johnHeight, markHeight;
+johnHeight = 1.73; // kg
+markHeight = 2.62; // kg
+johnMass = 175; // meters
+markMass = 160; // meters
+
+// John's BMI
+var jBmi = johnMass / (johnHeight**2);
+console.log('This is John\'s BMI', jBmi);
+
+// Mark's BMI
+var mBmi = markMass / (markHeight**2);
+console.log('This is Mark\'s BMI', mBmi);
+
+// Boolean value
+var ask = mBmi > jBmi;
+console.log('Is Mark\'s BMI higher than John\'s?', ask);
 
 
 
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    height: 1.73,
+    mass: 175,
+    calcBmi: function(){
+        return this.bmi = this.mass / (this.height**2);
+    }
+}
+
+//john.calcBmi();
+//console.log(john);
+
+
+var mark = {
+    firstName: 'Mark',
+    lastName: 'Odis',
+    height: 2.62,
+    mass: 160,
+    calcBmi: function(){
+        return this.bmi = this.mass / (this.height**2);
+    }
+}
+
+//mark.calcBmi();
+//console.log(mark);
+
+if(john.calcBmi() > mark.calcBmi()){ // call the method and use it at the sametime. 
+    console.log('John\'s BMI is higher than Mark\'s?', john.firstName, john.lastName, john.bmi);
+} else {
+    console.log('Mark\'s BMI is higher than John\'s?', mark.firstName, mark.lastName, mark.bmi);
+}
+
+*/
+
+
+/********************************************************
+* Loops and iteration
+*
+// For loop
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 < 10 true, log i to the console, i++
+
+
+for (var i = 0; i <= 20; i += 2) {
+    console.log(i);
+}
+
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 < 10 true, log i to the console, i++
 
 
 
+var john = ['Joseph', 'Glover', 1980, 'designer', false];
+
+for (var i = 0; i < john.length; i++) {
+    console.log(john[i]);
+}
+
+// While loop
+var i = 0;
+while(i < john.length){
+    console.log(john[i]);
+    i++;
+}
+*/
+
+// Continue and break statements
+
+//var john = ['Joseph', 'Glover', 1980, 'designer', false];
+/*
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') continue; // continues and skips numbers
+    console.log(john[i]);
+}
+
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') break; // break out of the loop not a string.
+    console.log(john[i]);
+}
+*/
+/*******************
+//var john = ['Joseph', 'Glover', 1980, 'designer', false];
+for (var i = john.length - 1; i >= 0; i--) {
+    //if (typeof john[i] !== 'string') continue; // continues and skips numbers
+    console.log(john[i]);
+}
+*/
+
+// Codding Challenge 5
+// Creating the objects for John
+var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function(){
+        this.tips = [];
+        this.finalValues = [];
+        
+        for (i = 0; i < this.bills.length; i++){
+            //Determin percentage based on tipping rules
+            var percentage;
+            var bill = this.bills[i];
+            if (bill < 50) {
+                percentage = .2;
+            } else if (bill >= 50 && bill < 200) {
+                percentage = .15;
+            } else {
+                percentage = .1;
+            }
+            // Add results to the correspoing arrarys
+            
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage;
+        }
+    }
+}
+
+// Creating the objects for Mark
+var mark = {
+    fullName: 'Mark Miller',
+    bills: [77, 475, 110, 45],
+    calcTips: function(){
+        this.tips = [];
+        this.finalValues = [];
+        
+        for (i = 0; i < this.bills.length; i++){
+            //Determin percentage based on tipping rules
+            var percentage;
+            var bill = this.bills[i];
+            if (bill < 100) {
+                percentage = .2;
+            } else if (bill >= 100 && bill < 300) {
+                percentage = .1;
+            } else {
+                percentage = .25;
+            }
+            // Add results to the correspoing arrarys
+            
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage;
+        }
+    }
+}
+
+john.calcTips();
+mark.calcTips();
+console.log(john, mark);
 
 
+// How to calc avg tips
+function calcAve(tips){
+    var sum = 0;
+    for (var i = 0; i < tips.length; i++){
+        sum = sum + tips[i];
+    }
+        return sum / tips.length;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+// This is how you call the functions and add it to the objects.
+john.average = calcAve(john.tips);
+mark.average = calcAve(mark.tips);
+console.log(john, mark);
 
 
 
